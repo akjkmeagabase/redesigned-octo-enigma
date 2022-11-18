@@ -1,0 +1,34 @@
+{
+  "name": "web3.storage",
+  "version": "1.0.0",
+  "private": true,
+  "license": "(Apache-2.0 AND MIT)",
+  "workspaces": [
+    "packages/api",
+    "packages/client",
+    "packages/cron",
+    "packages/db",
+    "packages/pinpin",
+    "packages/report",
+    "packages/w3",
+    "packages/website"
+  ],
+  "scripts": {
+    "test": "npm run lint && npm run test --workspaces",
+    "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard --fix "
+  },
+  "devDependencies": {
+    "snazzy": "^9.0.0",
+    "standard": "^16.0.3"
+  },
+  "standard": {
+    "ignore": [
+      "packages/website"
+    ]
+  },
+  "engines": {
+    "node": "16.x",
+    "npm": "7.x"
+  }
+}
