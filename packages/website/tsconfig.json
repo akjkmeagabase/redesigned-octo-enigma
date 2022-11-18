@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "allowJs": true,
+    "checkJs": true,
+    "target": "esnext",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": false,
+    "baseUrl": "./",
+    "paths": {
+      "ZeroComponents/*": ["modules/zero/components/*"],
+      "ZeroHooks/*": ["modules/zero/hooks/*"]
+    }
+  },
+  "include": ["lib", "pages", "components", "content", "hooks", "modules", "store", "declaration.d.ts"],
+  "exclude": ["node_modules", ".next/", "{pages,components,content,hooks,modules}/**/*.js"],
+  "references": [
+    {
+      "path": "../client"
+    }
+  ]
+}
