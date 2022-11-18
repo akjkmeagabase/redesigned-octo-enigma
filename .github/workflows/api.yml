@@ -1,0 +1,44 @@
+name: API
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/api/**'
+      - '.github/workflows/api.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'packages/api/**'
+      - '.github/workflows/api.yml'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - uses: bahmutov/npm-install@v1
+      - run: npm test --workspace packages/api
+
+  deploy-staging:
+    name: Deploy Staging API
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - uses: bahmutov/npm-install@v1
+      - name: Publish api worker
+        # workaround for https://github.com/cloudflare/wrangler-action/issues/59 to use node 16
+        uses: web3-storage/wrangler-action@node16
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: 'packages/api'
+          environment: 'staging'
