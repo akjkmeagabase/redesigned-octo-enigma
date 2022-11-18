@@ -1,0 +1,34 @@
+.Pagination {
+
+  .pageList {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+
+    .page {
+      cursor: pointer;
+
+      &.current {
+        cursor: default;
+        font-weight: 600;
+        color: #ff0000;
+      }
+
+      &:hover {
+        opacity: 0.75;
+     }
+    }
+
+    .firstPage,
+    .prevPage,
+    .nextPage,
+    .lastPage {
+      cursor: pointer;
+    }
+
+    .prevEllipses,
+    .nextEllipses {
+      cursor: default;
+    }
+  }
+}
