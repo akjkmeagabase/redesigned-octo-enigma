@@ -1,0 +1,43 @@
+{
+  "name": "@web3-storage/w3",
+  "version": "2.4.1",
+  "description": "The CLI to save your things in web3.storage ⁂",
+  "type": "module",
+  "bin": {
+    "w3": "bin.js"
+  },
+  "scripts": {
+    "start": "./bin.js",
+    "test": "mocha test/*.spec.js --ignore test/e2e.spec.js --exit",
+    "test:e2e": "mocha test/e2e.spec.js --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web3-storage/web3.storage.git",
+    "directory": "packages/w3"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web3-storage/web3.storage/issues"
+  },
+  "homepage": "https://web3.storage",
+  "dependencies": {
+    "@ipld/car": "^3.1.16",
+    "conf": "^10.0.1",
+    "enquirer": "^2.3.6",
+    "hard-rejection": "^2.1.0",
+    "ipfs-car": "^0.5.8",
+    "ora": "^5.4.1",
+    "sade": "^1.7.4",
+    "web3.storage": "^3.0.0"
+  },
+  "devDependencies": {
+    "execa": "^5.1.1",
+    "mocha": "^8.3.2"
+  },
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  }
+}
