@@ -1,0 +1,23 @@
+{
+  "name": "web3.storage",
+  "version": "1.0.0",
+  "private": true,
+  "license": "(Apache-2.0 AND MIT)",
+  "workspaces": [
+    "packages/api",
+    "packages/client"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces",
+    "format": "prettier --write '**/*.{js,jsx,ts,tsx}'"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.1"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  }
+}
